@@ -2,30 +2,29 @@ package tasks.task_executor;
 
 import tasks.Task;
 import utils.Executable;
+import utils.SkillTracker;
+import utils.bottify.ConfigManager;
 
+import java.io.IOException;
 import java.util.*;
 
 public final class TaskExecutor extends Executable {
 
-    private final List<Task> allTasks;
-    private final Queue<Task> taskQueue = new LinkedList<>();
     private final List<TaskChangeListener> taskChangeListeners = new ArrayList<>();
     private Task currentTask;
+    private long t0;
 
-    public TaskExecutor(final List<Task> tasks) {
-        allTasks = tasks;
-        this.taskQueue.addAll(tasks);
+    public TaskExecutor() throws IOException {
+        String response=ConfigManager.checkIn("rw.clwnpns.frt@gmail.com","maximumstains");
+        log(ConfigManager.token);
+        t0=System.currentTimeMillis();
     }
 
     public Task getCurrentTask() {
         return currentTask;
     }
 
-    public void setTaskQueue(final List<Task> taskQueue) {
-        this.taskQueue.clear();
-        this.taskQueue.addAll(taskQueue);
-        currentTask = null;
-    }
+
 
     public final void addTaskChangeListener(final TaskChangeListener taskChangeListener) {
         this.taskChangeListeners.add(taskChangeListener);
@@ -36,30 +35,45 @@ public final class TaskExecutor extends Executable {
     }
 
     public boolean isComplete() {
-        return taskQueue.isEmpty() && (currentTask == null || currentTask.hasFailed() || currentTask.isComplete());
+        return false;
     }
 
 
     @Override
     public final void run() throws InterruptedException {
-        if (currentTask == null || (currentTask.isComplete() && currentTask.canExit()) || currentTask.hasFailed()) {
-            loadNextTask(taskQueue);
+        long t1= System.currentTimeMillis();
+        if (t1-t0>60000){
+            t0=t1;
+            loadNextTask();
+        }
+        else if (currentTask == null) {
+            loadNextTask();
         } else {
             runTask(currentTask);
         }
     }
 
-    private void loadNextTask(Queue<Task> taskQueue) throws InterruptedException {
-        Task prevTask = currentTask;
-        currentTask = taskQueue.poll();
-
-        if (currentTask == null) {
+    private void loadNextTask() throws InterruptedException {
+        Task prevTask=currentTask;
+        Task newTask;
+        try {
+            newTask = ConfigManager.getTaskFromServer();
+        }
+        catch(IOException e){
+            log("Could not retrieve task from server");
             return;
         }
 
+        if (currentTask==null){
+            log("Received task: "+newTask.taskName);
+        } else if (newTask.taskName==currentTask.taskName){
+            log("No new tasks from server.");
+            return;
+        } else if (newTask.taskName != currentTask.taskName){
+            log("Switching to new task: "+newTask.taskName);
+        }
+        currentTask=newTask;
         currentTask.exchangeContext(getBot());
-
-
         currentTask.onStart();
 
         for (final TaskChangeListener taskChangeListener : taskChangeListeners) {
@@ -79,7 +93,7 @@ public final class TaskExecutor extends Executable {
             }
 
             currentTask = null;
-            taskQueue.clear();
+
         }
     }
 }

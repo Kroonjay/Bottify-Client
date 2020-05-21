@@ -27,4 +27,6 @@ public abstract class Task extends Executable implements Copyable<Task> {
 
     public abstract void runTask() throws InterruptedException;
 
+    public boolean postUpdate(){return false;}
+
 }

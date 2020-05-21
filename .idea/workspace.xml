@@ -1,8 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="00212b98-f1d6-4228-bce5-0439516becdb" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="00212b98-f1d6-4228-bce5-0439516becdb" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tasks/master_farmers/MasterFarmers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/BottifyClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/BottifyClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/Task.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/TaskFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/TaskFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/task_executor/TaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/task_executor/TaskExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/tutorial_island/TutorialIslandTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/tutorial_island/TutorialIslandTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/bottify/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/bottify/ConfigManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/bottify-client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/bottify-client-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/BottifyClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BottifyClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/quests/RuneMysteriesTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/Task.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tasks/Task.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/TaskFactory$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/TaskFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/banking/Bank.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/banking/ToolUpgradeBanking.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/task_executor/TaskChangeListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/task_executor/TaskExecutor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/tutorial_island/PriestSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/tutorial_island/RuneScapeGuideSection$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/tutorial_island/RuneScapeGuideSection$UsernameCheckStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/tutorial_island/RuneScapeGuideSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tasks/tutorial_island/TutorialIslandTask.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/TutorialIsland.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/BankSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/CookingSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/FightingSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/PriestSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/QuestSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/RuneScapeGuideSection$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/RuneScapeGuideSection$UsernameCheckStatus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/RuneScapeGuideSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/sections/SurvivalSection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/util/Sleep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/util/event/DisableAudioEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/util/event/EnableFixedModeEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/util/event/ToggleRoofsHiddenEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/util/event/ToggleShiftDropEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/util/widget/WidgetActionFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tutorialisland/util/widget/WidgetDimensionFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/RSUnits.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/ResourceMode.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/Sleep.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/bottify/ConfigManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/enums/Food.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/event/DisableAudioEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/event/EnableFixedModeEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/event/ToggleRoofsHiddenEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/event/ToggleShiftDropEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/file_managers/FontManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/file_managers/ImageManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/file_managers/ResourceManager.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/widget/filters/WidgetActionFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/utils/widget/filters/WidgetMessageFilter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -15,21 +96,28 @@
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="hiddenUrls">
+      <set>
+        <option value="https://github.com/Kroonjay/Bottify-Client.git" />
+      </set>
     </option>
   </component>
   <component name="ProjectId" id="1bQ7ZbuCVcCMRhce2fmrpFcmPsl" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/tasks" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -44,25 +132,39 @@
       <recent name="$PROJECT_DIR$/local-repo" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Maven.Unnamed">
     <configuration name="bottify-client-1.0-SNAPSHOT.jar" type="JarApplication" temporary="true">
       <option name="JAR_PATH" value="$PROJECT_DIR$/target/bottify-client-1.0-SNAPSHOT.jar" />
       <method v="2" />
     </configuration>
+    <configuration name="Unnamed" type="MavenRunConfiguration" factoryName="Maven" temporary="true">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="install" />
+              </list>
+            </option>
+            <option name="pomFileName" value="pom.xml" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Maven.Unnamed" />
         <item itemvalue="JAR Application.bottify-client-1.0-SNAPSHOT.jar" />
       </list>
     </recent_temporary>
@@ -79,5 +181,91 @@
       <updated>1588552519938</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="534" y="101" width="912" height="911" key="CommitChangelistDialog2" timestamp="1590027253647">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="534" y="101" width="912" height="911" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1590027253647" />
+    <state x="617" y="388" width="735" height="520" key="FileChooserDialogImpl" timestamp="1589858448106">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state x="617" y="388" width="735" height="520" key="FileChooserDialogImpl/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589858448106" />
+    <state width="1804" height="274" key="GridCell.Tab.0.bottom" timestamp="1589867252993">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="274" key="GridCell.Tab.0.bottom/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589867252993" />
+    <state width="1874" height="283" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589257549717" />
+    <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589179620878" />
+    <state width="1804" height="274" key="GridCell.Tab.0.center" timestamp="1589867252992">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="274" key="GridCell.Tab.0.center/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589867252992" />
+    <state width="1874" height="283" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589257549717" />
+    <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589179620878" />
+    <state width="1804" height="274" key="GridCell.Tab.0.left" timestamp="1589867252992">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="274" key="GridCell.Tab.0.left/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589867252992" />
+    <state width="1874" height="283" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589257549716" />
+    <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589179620878" />
+    <state width="1804" height="274" key="GridCell.Tab.0.right" timestamp="1589867252992">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state width="1804" height="274" key="GridCell.Tab.0.right/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589867252992" />
+    <state width="1874" height="283" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589257549717" />
+    <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589179620878" />
+    <state width="1874" height="351" key="GridCell.Tab.1.bottom" timestamp="1589256783349">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.1.bottom/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589256783349" />
+    <state width="1874" height="351" key="GridCell.Tab.1.center" timestamp="1589256783349">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.1.center/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589256783349" />
+    <state width="1874" height="351" key="GridCell.Tab.1.left" timestamp="1589256783349">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.1.left/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589256783349" />
+    <state width="1874" height="351" key="GridCell.Tab.1.right" timestamp="1589256783349">
+      <screen x="1920" y="0" width="1920" height="1080" />
+    </state>
+    <state width="1874" height="351" key="GridCell.Tab.1.right/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589256783349" />
+    <state x="528" y="299" width="924" height="691" key="Maven.ArtifactSearchDialog" timestamp="1589859322817">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state x="528" y="299" width="924" height="691" key="Maven.ArtifactSearchDialog/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589859322817" />
+    <state x="170" y="115" width="1024" height="852" key="SettingsEditor" timestamp="1589862399736">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state x="170" y="115" width="1024" height="852" key="SettingsEditor/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589862399736" />
+    <state x="590" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1590027099800">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="590" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1590027099800" />
+    <state x="170" y="215" width="1650" height="853" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1589863144438">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state x="170" y="215" width="1650" height="853" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589863144438" />
+    <state x="170" y="215" width="1650" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1589862728819">
+      <screen x="70" y="115" width="1850" height="1053" />
+    </state>
+    <state x="170" y="215" width="1650" height="853" key="com.intellij.history.integration.ui.views.FileHistoryDialog/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589862728819" />
+    <state x="766" y="468" width="458" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1589078073501">
+      <screen x="70" y="27" width="1850" height="1053" />
+    </state>
+    <state x="766" y="468" width="458" height="177" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589078073501" />
   </component>
 </project>

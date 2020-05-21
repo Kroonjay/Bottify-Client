@@ -1,6 +1,8 @@
 package tasks.tutorial_island;
 
+import org.osbot.rs07.api.map.Area;
 import tasks.Task;
+import tasks.TaskName;
 import utils.Sleep;
 
 public final class TutorialIslandTask extends Task {
@@ -15,10 +17,12 @@ public final class TutorialIslandTask extends Task {
     private final TutorialSection priestSection = new PriestSection();
     private final TutorialSection wizardSection = new WizardSection();
 
+    private Area lumbridge;
+
     public boolean success = false;
 
     public TutorialIslandTask() {
-        super(null);
+        super(TaskName.TUTORIAL_ISLAND);
     }
 
     @Override
@@ -41,11 +45,20 @@ public final class TutorialIslandTask extends Task {
         priestSection.exchangeContext(getBot());
         wizardSection.exchangeContext(getBot());
 
+        lumbridge = new Area(3218,3210,3228,3226);
+
         Sleep.sleepUntil(() -> getClient().isLoggedIn() && myPlayer().isVisible() && myPlayer().isOnScreen(), 6000, 500);
     }
 
     @Override
     public void runTask() throws InterruptedException {
+
+        if (lumbridge.contains(myPlayer())){
+            log("In Lumbridge.");
+            success=true;
+        } else{
+            log("Not in Lumbridge.");
+        }
         switch (getTutorialSection()) {
             case 0:
             case 1:
@@ -86,7 +99,7 @@ public final class TutorialIslandTask extends Task {
                 wizardSection.onLoop();
                 break;
         }
-        success = true;
+
     }
 
     private int getTutorialSection() {

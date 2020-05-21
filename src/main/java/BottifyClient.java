@@ -27,22 +27,11 @@ public class BottifyClient extends Script {
     @Override
     public void onStart() throws InterruptedException {
 
-        List<Task> tasks = null;
         try {
-            tasks = ConfigManager.getTasksFromServer();
+            taskExecutor = new TaskExecutor();
         } catch (IOException e) {
-            log("Failed to Connect to Server");
-            e.printStackTrace();
+            log("Could not initialize task executor");
         }
-
-        assert tasks != null;
-        if (tasks.isEmpty()) {
-            log("Error Retrieving Tasks");
-            stop(false);
-            return;
-        }
-
-        taskExecutor = new TaskExecutor(tasks);
         taskExecutor.exchangeContext(getBot());
         taskExecutor.addTaskChangeListener((oldTask, newTask) -> {
             skillTracker.stopAll();
@@ -50,11 +39,6 @@ public class BottifyClient extends Script {
         taskExecutor.onStart();
 
         skillTracker = new SkillTracker(getSkills());
-    }
-
-
-    public static List<Task> getTasks() throws IOException {
-        return ConfigManager.getTasksFromServer();
     }
 
 
