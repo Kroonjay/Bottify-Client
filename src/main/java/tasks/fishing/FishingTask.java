@@ -9,7 +9,7 @@ import tasks.TaskName;
 
 public class FishingTask extends Task {
 
-    private final Fish fish;
+    private Fish fish;
     private FishingLocation location;
     public String params;
 

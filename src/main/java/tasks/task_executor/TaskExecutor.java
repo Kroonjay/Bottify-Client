@@ -40,7 +40,7 @@ public final class TaskExecutor extends Executable {
     @Override
     public final void run() throws InterruptedException {
         long now = System.currentTimeMillis();
-        if (now-lastCheckedAt>60000){
+        if (now-lastCheckedAt>30000){
             loadNextTask();
             lastCheckedAt=now;
         }
@@ -65,10 +65,10 @@ public final class TaskExecutor extends Executable {
 
         if (currentTask==null){
             log("Received task: "+newTask.taskName);
-        } else if (newTask.taskName==currentTask.taskName){
+        } else if (newTask.taskName==currentTask.taskName && newTask.params==currentTask.params){
             log("No new tasks from server.");
             return;
-        } else if (newTask.taskName != currentTask.taskName){
+        } else {
             log("Switching to new task: "+newTask.taskName);
         }
         currentTask=newTask;

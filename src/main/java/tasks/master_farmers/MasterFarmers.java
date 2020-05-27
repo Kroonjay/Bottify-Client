@@ -1,15 +1,20 @@
 package tasks.master_farmers;
 
 import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.osbot.rs07.api.Bank;
 import org.osbot.rs07.api.Inventory;
 import org.osbot.rs07.api.Skills;
 import org.osbot.rs07.api.map.Area;
+import org.osbot.rs07.api.map.Position;
 import org.osbot.rs07.api.model.NPC;
 import org.osbot.rs07.api.model.RS2Object;
 import org.osbot.rs07.api.ui.Skill;
 import org.osbot.rs07.listener.GameTickListener;
+import tasks.BotSpots;
 import tasks.Task;
 import tasks.TaskName;
 import utils.Location;
@@ -25,15 +30,15 @@ import java.util.Random;
 
 public class MasterFarmers extends Task implements GameTickListener {
 
-    private Area location;
+    private Position location;
     private String food;
-    private float health = 0;
-    private int state;
-    private int lastState;
+    private int state=States.GOTOFARMER;
+    private int lastState=States.GOTOFARMER;
     private int hp;
     private Inventory inv;
     private Bank bnk;
     private JSONObject skills;
+
 
 
     public boolean success=false;
@@ -47,21 +52,29 @@ public class MasterFarmers extends Task implements GameTickListener {
     }
 
 
-    public MasterFarmers() {
+    public MasterFarmers(String params) {
         super(TaskName.MASTER_FARMERS);
-
+        this.params=params;
     }
 
 
 
     @Override
     public void onStart() {
-        state=States.GOTOFARMER;
-        lastState=States.GOTOFARMER;
 
+        JSONParser parser = new JSONParser();
+        JSONObject params=null;
+        try {
+            params = (JSONObject) parser.parse(this.params);
+        } catch (ParseException e){
+            log("Failed to parse params");
+        }
 
-        this.location=Location.getByName("DRAYNOR");
-        this.food="Jug of wine";
+        this.location= BotSpots.getByName((String) params.get("location"));
+        this.food=(String) params.get("food");
+        log("Retrieved params");
+        log("Location: "+ params.get("location"));
+        log("Food: "+params.get("food"));
     }
 
     @Override
@@ -106,7 +119,7 @@ public class MasterFarmers extends Task implements GameTickListener {
     }
 
     private int goToFarmer() throws InterruptedException {
-        if (!location.contains(myPlayer())) {
+        if (location!=(myPlayer()).getPosition()) {
             getWalking().webWalk(location);
             sleep(rand(780, 1098));
             return States.GOTOFARMER;
@@ -180,7 +193,7 @@ public class MasterFarmers extends Task implements GameTickListener {
 
     @Override
     public MasterFarmers copy () {
-        return new MasterFarmers();
+        return new MasterFarmers(this.params);
     }
 
     public static int rand(int min, int max) {
@@ -200,22 +213,6 @@ public class MasterFarmers extends Task implements GameTickListener {
         public static final int HEAL = 1;
         public static final int PICKPOCKET = 2;
         public static final int BANK = 3;
-
-    }
-
-    private enum Location {
-        ARDOUGNE(new Area(2645, 3365, 2635, 3353)),
-        DRAYNOR(new Area(3086, 3255, 3072, 3245));
-
-        private Area location;
-
-        public static Area getByName(String name) {
-            return Location.valueOf(name).location;
-        }
-
-        Location(final Area location) {
-            this.location = location;
-        }
 
     }
 

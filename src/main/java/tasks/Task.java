@@ -5,6 +5,7 @@ import utils.Executable;
 
 public abstract class Task extends Executable implements Copyable<Task> {
     public TaskName taskName;
+    public String params;
 
     public Task(final TaskName taskName) {
         this.taskName = taskName;

@@ -3,17 +3,18 @@ package tasks;
 public enum TaskName {
 
     MASTER_FARMERS("MasterFarmerTask"),
+    TRAVEL("Travel"),
     RESOURCE("ResourceTask"),
+    FISHING("Fishing"),
     GRAND_EXCHANGE("GrandExchangeTask"),
     TUTORIAL_ISLAND("TutorialIslandTask"),
     BOT_ERROR("BotErrorTask"),
     BREAK("BreakTask"),
     COOKS_ASSISTANT("QuestTask-CooksAssistant"),
     PICK_FLAX("MoneyMaking-FlaxCollecting"),
-    RUNE_MYSTERIES("QuestTask-RuneMysteries"),
-    FISHING("Skilling-FishingTask");
-    String taskName;
+    RUNE_MYSTERIES("QuestTask-RuneMysteries");
 
+    String taskName;
     public static TaskName getByName(String taskName) {
         return TaskName.valueOf(taskName);
     }
