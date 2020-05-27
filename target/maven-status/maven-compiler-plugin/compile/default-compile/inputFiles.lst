@@ -18,6 +18,7 @@
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/banking/ItemReqBanking.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/bottify/TaskRequest.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/tutorial_island/WizardSection.java
+/home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/fishing/FishingMethod.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/banking/DepositAllBanking.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/MiningSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/tutorial_island/MiningSection.java
@@ -26,6 +27,7 @@
 /home/mitchell/OSBot/Bottify-Client/src/main/java/quests/DialogueCompleter.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/enums/Food.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/PriestSection.java
+/home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/fishing/Fish.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/BankSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/util/widget/WidgetActionFilter.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/item_requirement/ItemReq.java
@@ -39,6 +41,7 @@
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/widget/filters/WidgetActionFilter.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/SurvivalSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/util/event/EnableFixedModeEvent.java
+/home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/travel/Travel.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/banking/Bank.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/tutorial_island/PriestSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/banking/Banking.java
@@ -56,11 +59,14 @@
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/CookingSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/event/ToggleRoofsHiddenEvent.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/task_executor/TaskChangeListener.java
+/home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/BotSpots.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/bottify/ConfigManager.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/quests/RuneMysteriesTask.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/QuestSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/util/Sleep.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/tutorial_island/RuneScapeGuideSection.java
+/home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/fishing/FishingTask.java
+/home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/fishing/FishingLocation.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/TutorialSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/Executable.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/file_managers/FontManager.java
