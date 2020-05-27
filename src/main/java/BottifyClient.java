@@ -13,19 +13,25 @@ import utils.event.ToggleShiftDropEvent;
 import java.io.IOException;
 import java.util.List;
 
-@ScriptManifest(author = "Kroonjay", name = "Bottify-Client", info = "Bottify Client", version = 0, logo = "http://i.imgur.com/58Zz0fb.png")
+@ScriptManifest(author = "Kroonjay", name = "BottifyClient", info = "Bottify Client", version = 4.20, logo = "http://i.imgur.com/58Zz0fb.png")
 public class BottifyClient extends Script {
 
     static final String VERSION = "v3.1.10";
-    private static final String BASE_URL = "http://bottify.io:8000/";
-    public static String BotID = "Kroonjay";
+    private static final String BASE_URL = "http://bottify.io/api/bots";
     private SkillTracker skillTracker;
     private TaskExecutor taskExecutor;
-
     private boolean osrsClientIsConfigured;
 
     @Override
     public void onStart() throws InterruptedException {
+        String BotName = getParameters();
+        System.out.println("Attempting to Login to Bottify Server with BotID: " + BotName);
+        try {
+            String token = ConfigManager.checkIn(BotName);
+        } catch (IOException e) {
+            System.out.println("Couldn't Get Token");
+            e.printStackTrace();
+        }
 
         try {
             taskExecutor = new TaskExecutor();
@@ -39,10 +45,31 @@ public class BottifyClient extends Script {
         taskExecutor.onStart();
 
         skillTracker = new SkillTracker(getSkills());
+
     }
 
 
+
+
     @Override
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public int onLoop() throws InterruptedException {
         if (!getClient().isLoggedIn()) {
             return random(1200, 1800);
@@ -50,7 +77,7 @@ public class BottifyClient extends Script {
             osrsClientIsConfigured = configureOSRSClient();
         } else if (taskExecutor.isComplete()) {
             stop(true);
-        } else {
+        } else  {
             taskExecutor.run();
         }
         return random(200, 300);

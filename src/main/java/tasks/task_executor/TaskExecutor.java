@@ -15,9 +15,6 @@ public final class TaskExecutor extends Executable {
     private long t0;
 
     public TaskExecutor() throws IOException {
-        String response=ConfigManager.checkIn("rw.clwnpns.frt@gmail.com","maximumstains");
-        log(ConfigManager.token);
-        t0=System.currentTimeMillis();
     }
 
     public Task getCurrentTask() {
@@ -38,16 +35,18 @@ public final class TaskExecutor extends Executable {
         return false;
     }
 
+    public long lastCheckedAt = 0;
 
     @Override
     public final void run() throws InterruptedException {
-        long t1= System.currentTimeMillis();
-        if (t1-t0>60000){
-            t0=t1;
+        long now = System.currentTimeMillis();
+        if (now-lastCheckedAt>60000){
             loadNextTask();
+            lastCheckedAt=now;
         }
         else if (currentTask == null) {
             loadNextTask();
+            lastCheckedAt=now;
         } else {
             runTask(currentTask);
         }

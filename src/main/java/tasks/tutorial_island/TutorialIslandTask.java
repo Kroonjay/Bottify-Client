@@ -53,12 +53,6 @@ public final class TutorialIslandTask extends Task {
     @Override
     public void runTask() throws InterruptedException {
 
-        if (lumbridge.contains(myPlayer())){
-            log("In Lumbridge.");
-            success=true;
-        } else{
-            log("Not in Lumbridge.");
-        }
         switch (getTutorialSection()) {
             case 0:
             case 1:

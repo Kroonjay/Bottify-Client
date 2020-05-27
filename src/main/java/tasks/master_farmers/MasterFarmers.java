@@ -60,24 +60,8 @@ public class MasterFarmers extends Task implements GameTickListener {
         lastState=States.GOTOFARMER;
 
 
-
-        JSONObject params;
-        try {
-            params = ConfigManager.getTaskParameters(TaskName.MASTER_FARMERS.toString());
-        } catch(IOException e) {
-            params=null;
-        }
-
-        if (params==null){
-            log("No Params?");
-            return;
-        }
-
-        this.location=Location.getByName((String) params.get("location"));
-        this.food=(String) params.get("food");
-        log("Retrieved params");
-        log("Location: "+ params.get("location"));
-        log("Food: "+params.get("food"));
+        this.location=Location.getByName("DRAYNOR");
+        this.food="Jug of wine";
     }
 
     @Override

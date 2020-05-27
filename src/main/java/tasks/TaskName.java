@@ -10,7 +10,8 @@ public enum TaskName {
     BREAK("BreakTask"),
     COOKS_ASSISTANT("QuestTask-CooksAssistant"),
     PICK_FLAX("MoneyMaking-FlaxCollecting"),
-    RUNE_MYSTERIES("QuestTask-RuneMysteries");
+    RUNE_MYSTERIES("QuestTask-RuneMysteries"),
+    FISHING("Skilling-FishingTask");
     String taskName;
 
     public static TaskName getByName(String taskName) {

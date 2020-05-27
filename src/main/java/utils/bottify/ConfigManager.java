@@ -22,19 +22,16 @@ import java.util.Optional;
 
 public class ConfigManager {
 
-    private static String username;
-    private static String password;
+    private static String BotName;
     public static String token;
 
-    private static final String BASE_URL = "http://bottify.io/api/";
+    private static final String BASE_URL = "http://bottify.io/api/bots/";
     private static final String dataDirectory = Paths.get(System.getProperty("user.home"), "OSBot", "Data").toString();
 
 
-    public static String checkIn(String username, String password) throws IOException {
-        ConfigManager.username = username;
-        ConfigManager.password = password;
-
-        URL url = new URL(BASE_URL+"bots/check-in?rs_username="+ConfigManager.username+"&rs_password="+ConfigManager.password);
+    public static String checkIn(String BotName) throws IOException {
+        ConfigManager.BotName = BotName;
+        URL url = new URL(BASE_URL+"check-in?BotName="+ConfigManager.BotName);
         URLConnection con = url.openConnection();
         InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -43,32 +40,33 @@ public class ConfigManager {
         try{
             response = (JSONObject) jsonParser.parse(bufferedReader);
             token = (String) response.get("access_token");
-            return token;
-
+            System.out.println("Token" + token);
         }
         catch(ParseException e)  {
-            return e.toString();
+            System.out.println("Error: " + e.toString());
         }
-
+        return token;
 
     }
 
 
 
     public static Task getTaskFromServer() throws IOException {
-        String endpoint = "tasks";
         Task task=null;
         JSONObject taskJSON=null;
-        URL url = new URL(BASE_URL + endpoint);
+        URL url = new URL(BASE_URL);
         URLConnection con = url.openConnection();
-        con.setRequestProperty("BotID", ConfigManager.username);
+        String authHeaderString = "bearer " + token;
+        con.setRequestProperty("Authorization", authHeaderString);
         InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         JSONParser jsonParser = new JSONParser();
         try{
             taskJSON = (JSONObject) jsonParser.parse(bufferedReader);
-            TaskName taskName = TaskName.getByName((String) taskJSON.get("taskName"));
-            task = TaskFactory.createTask(taskName);
+            TaskName taskName = TaskName.getByName((String) taskJSON.get("task_name"));
+            String taskParams = (String) taskJSON.get("params");
+            task = TaskFactory.createTask(taskName, taskParams);
+            System.out.println("Task Params" + taskParams);
         }
         catch(ParseException e)  {
             System.out.println("Failed to parse task");
@@ -77,25 +75,6 @@ public class ConfigManager {
         return task;
     }
 
-    public static JSONObject getTaskParameters(String endpoint) throws IOException {
-
-
-        JSONObject taskParams=null;
-        URL url = new URL(BASE_URL + "tasks/" +endpoint);
-        URLConnection con = url.openConnection();
-        con.setRequestProperty("BotID", ConfigManager.username);
-        InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        JSONParser jsonParser = new JSONParser();
-        try{
-            taskParams = (JSONObject) jsonParser.parse(bufferedReader);
-        }
-        catch(ParseException e)  {
-            System.out.println("Failed to parse task parameters");
-        }
-
-        return taskParams;
-    }
 
     public static JSONObject postUpdate(String endpoint) throws IOException {
 
@@ -103,7 +82,7 @@ public class ConfigManager {
         JSONObject taskParams=null;
         URL url = new URL(BASE_URL + "tasks/" +endpoint);
         URLConnection con = url.openConnection();
-        con.setRequestProperty("BotID", ConfigManager.username);
+        con.setRequestProperty("BotID", ConfigManager.BotName);
         InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         JSONParser jsonParser = new JSONParser();
