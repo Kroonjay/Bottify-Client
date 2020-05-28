@@ -92,7 +92,7 @@ public class Fishing extends Task {
     }
 
     private int goToBank() throws InterruptedException {
-        if (getObjects().closest("Bank booth")==null) {
+        if (getObjects().closest("Bank booth")==null || !getObjects().closest("Bank booth").isVisible()) {
             getWalking().webWalk(bankLocation);
             sleep(rand(780, 1098));
             return States.GOTOBANK;
