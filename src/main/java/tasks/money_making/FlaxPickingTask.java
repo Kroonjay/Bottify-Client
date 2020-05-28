@@ -1,5 +1,6 @@
 package tasks.money_making;
 
+import org.json.simple.JSONObject;
 import tasks.Task;
 import tasks.TaskName;
 import tasks.banking.Banking;
@@ -36,8 +37,8 @@ public class FlaxPickingTask extends Task {
     private Entity flax;
     private Executable flaxBankNode;
 
-    public FlaxPickingTask() {
-        super(TaskName.PICK_FLAX);
+    public FlaxPickingTask(JSONObject taskJson) {
+        super(TaskName.PICK_FLAX,taskJson);
     }
 
     @Override
@@ -73,7 +74,7 @@ public class FlaxPickingTask extends Task {
 
     @Override
     public Task copy() {
-        return new FlaxPickingTask();
+        return new FlaxPickingTask(this.taskJson);
     }
 
     @Override

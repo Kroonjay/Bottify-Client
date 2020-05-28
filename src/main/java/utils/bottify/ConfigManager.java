@@ -31,18 +31,17 @@ public class ConfigManager {
 
     public static String checkIn(String BotName) throws IOException {
         ConfigManager.BotName = BotName;
-        URL url = new URL(BASE_URL+"check-in?BotName="+ConfigManager.BotName);
+        URL url = new URL(BASE_URL + "check-in?BotName=" + ConfigManager.BotName);
         URLConnection con = url.openConnection();
         InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         JSONParser jsonParser = new JSONParser();
         JSONObject response;
-        try{
+        try {
             response = (JSONObject) jsonParser.parse(bufferedReader);
             token = (String) response.get("access_token");
             System.out.println("Token" + token);
-        }
-        catch(ParseException e)  {
+        } catch (ParseException e) {
             System.out.println("Error: " + e.toString());
         }
         return token;
@@ -50,10 +49,9 @@ public class ConfigManager {
     }
 
 
-
     public static Task getTaskFromServer() throws IOException {
-        Task task=null;
-        JSONObject taskJSON=null;
+        Task task = null;
+        JSONObject taskJson = null;
         URL url = new URL(BASE_URL);
         URLConnection con = url.openConnection();
         String authHeaderString = "bearer " + token;
@@ -61,39 +59,25 @@ public class ConfigManager {
         InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
         BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
         JSONParser jsonParser = new JSONParser();
-        try{
-            taskJSON = (JSONObject) jsonParser.parse(bufferedReader);
-            TaskName taskName = TaskName.getByName((String) taskJSON.get("task_name"));
-            String taskParams = (String) taskJSON.get("params");
-            task = TaskFactory.createTask(taskName, taskParams);
-            System.out.println("Task Params" + taskParams);
-        }
-        catch(ParseException e)  {
+        try {
+            taskJson = (JSONObject) jsonParser.parse(bufferedReader);
+            TaskName taskName = TaskName.getByName((String) taskJson.get("task_name"));
+            task = TaskFactory.createTask(taskName, taskJson);
+
+        } catch (ParseException e) {
             System.out.println("Failed to parse task");
         }
-
         return task;
     }
 
 
-    public static JSONObject postUpdate(String endpoint) throws IOException {
+    public static void taskComplete() throws IOException {
 
-
-        JSONObject taskParams=null;
-        URL url = new URL(BASE_URL + "tasks/" +endpoint);
+        URL url = new URL(BASE_URL + "/done");
         URLConnection con = url.openConnection();
-        con.setRequestProperty("BotID", ConfigManager.BotName);
-        InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
-        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-        JSONParser jsonParser = new JSONParser();
-        try{
-            taskParams = (JSONObject) jsonParser.parse(bufferedReader);
-        }
-        catch(ParseException e)  {
-            System.out.println("Failed to parse task parameters");
-        }
+        String authHeaderString = "bearer " + token;
+        con.setRequestProperty("Authorization", authHeaderString);
 
-        return taskParams;
     }
 
 

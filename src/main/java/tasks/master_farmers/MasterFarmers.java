@@ -52,9 +52,9 @@ public class MasterFarmers extends Task implements GameTickListener {
     }
 
 
-    public MasterFarmers(String params) {
-        super(TaskName.MASTER_FARMERS);
-        this.params=params;
+    public MasterFarmers(JSONObject taskJson) {
+        super(TaskName.MASTER_FARMERS,taskJson);
+
     }
 
 
@@ -193,7 +193,7 @@ public class MasterFarmers extends Task implements GameTickListener {
 
     @Override
     public MasterFarmers copy () {
-        return new MasterFarmers(this.params);
+        return new MasterFarmers(this.taskJson);
     }
 
     public static int rand(int min, int max) {

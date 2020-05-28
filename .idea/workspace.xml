@@ -25,20 +25,23 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00212b98-f1d6-4228-bce5-0439516becdb" name="Default Changelist" comment="">
+    <list default="true" id="00212b98-f1d6-4228-bce5-0439516becdb" name="Default Changelist" comment="Task parameter parsing, BotSpots, Travel Task">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tasks/fishing/Fishing.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tasks/BotSpots.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/BotSpots.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tasks/Task.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/Task.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tasks/TaskFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/TaskFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/TaskName.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/TaskName.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/fishing/FishingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/fishing/FishingTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/fishing/FishingTask.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tasks/master_farmers/MasterFarmers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/master_farmers/MasterFarmers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/money_making/FlaxPickingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/money_making/FlaxPickingTask.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tasks/task_executor/TaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/task_executor/TaskExecutor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tasks/travel/Travel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/travel/Travel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tasks/tutorial_island/TutorialIslandTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tasks/tutorial_island/TutorialIslandTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/utils/bottify/ConfigManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/utils/bottify/ConfigManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/bottify-client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/target/bottify-client-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/BottifyClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/BottifyClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/tasks/TaskName.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tasks/TaskName.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +147,21 @@
       <option name="project" value="LOCAL" />
       <updated>1590540609769</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa">
+      <created>1590548463934</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1590548463934</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Task parameter parsing, BotSpots, Travel Task">
+      <created>1590548567661</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1590548567661</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,14 +178,16 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="new things" />
-    <option name="LAST_COMMIT_MESSAGE" value="new things" />
+    <MESSAGE value="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" />
+    <MESSAGE value="Task parameter parsing, BotSpots, Travel Task" />
+    <option name="LAST_COMMIT_MESSAGE" value="Task parameter parsing, BotSpots, Travel Task" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="534" y="189" width="912" height="911" key="CommitChangelistDialog2" timestamp="1590540609651">
-      <screen x="70" y="115" width="1850" height="1053" />
+    <state x="1920" y="0" width="912" height="899" key="CommitChangelistDialog2" timestamp="1590548625270">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state x="534" y="189" width="912" height="911" key="CommitChangelistDialog2/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590540609651" />
+    <state x="1920" y="0" width="912" height="899" key="CommitChangelistDialog2/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590548625270" />
     <state x="534" y="101" width="912" height="911" key="CommitChangelistDialog2/70.27.1850.1053@70.27.1850.1053" timestamp="1590027253647" />
     <state x="170" y="215" width="1650" height="853" key="DiffContextDialog" timestamp="1590541082988">
       <screen x="70" y="115" width="1850" height="1053" />
@@ -178,45 +197,53 @@
       <screen x="70" y="115" width="1850" height="1053" />
     </state>
     <state x="617" y="388" width="735" height="520" key="FileChooserDialogImpl/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589858448106" />
-    <state width="902" height="47" key="GridCell.Tab.0.bottom" timestamp="1590546085015">
-      <screen x="70" y="115" width="1850" height="1053" />
+    <state width="937" height="414" key="GridCell.Tab.0.bottom" timestamp="1590638296515">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="902" height="47" key="GridCell.Tab.0.bottom/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590546085015" />
+    <state width="937" height="414" key="GridCell.Tab.0.bottom/70.115.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590638296515" />
+    <state width="902" height="414" key="GridCell.Tab.0.bottom/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590633432308" />
     <state width="1874" height="283" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589257549717" />
     <state width="1804" height="275" key="GridCell.Tab.0.bottom/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589179620878" />
-    <state width="902" height="47" key="GridCell.Tab.0.center" timestamp="1590546085015">
-      <screen x="70" y="115" width="1850" height="1053" />
+    <state width="937" height="414" key="GridCell.Tab.0.center" timestamp="1590638296515">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="902" height="47" key="GridCell.Tab.0.center/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590546085015" />
+    <state width="937" height="414" key="GridCell.Tab.0.center/70.115.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590638296515" />
+    <state width="902" height="414" key="GridCell.Tab.0.center/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590633432308" />
     <state width="1874" height="283" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589257549717" />
     <state width="1804" height="275" key="GridCell.Tab.0.center/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589179620878" />
-    <state width="902" height="47" key="GridCell.Tab.0.left" timestamp="1590546085015">
-      <screen x="70" y="115" width="1850" height="1053" />
+    <state width="937" height="414" key="GridCell.Tab.0.left" timestamp="1590638296514">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="902" height="47" key="GridCell.Tab.0.left/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590546085015" />
+    <state width="937" height="414" key="GridCell.Tab.0.left/70.115.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590638296514" />
+    <state width="902" height="414" key="GridCell.Tab.0.left/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590633432308" />
     <state width="1874" height="283" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589257549716" />
     <state width="1804" height="275" key="GridCell.Tab.0.left/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589179620878" />
-    <state width="902" height="47" key="GridCell.Tab.0.right" timestamp="1590546085015">
-      <screen x="70" y="115" width="1850" height="1053" />
+    <state width="937" height="414" key="GridCell.Tab.0.right" timestamp="1590638296515">
+      <screen x="1920" y="0" width="1920" height="1080" />
     </state>
-    <state width="902" height="47" key="GridCell.Tab.0.right/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590546085015" />
+    <state width="937" height="414" key="GridCell.Tab.0.right/70.115.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590638296515" />
+    <state width="902" height="414" key="GridCell.Tab.0.right/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590633432308" />
     <state width="1874" height="283" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589257549717" />
     <state width="1804" height="275" key="GridCell.Tab.0.right/70.27.1850.1053/1920.0.1920.1080@70.27.1850.1053" timestamp="1589179620878" />
-    <state width="1874" height="351" key="GridCell.Tab.1.bottom" timestamp="1589256783349">
+    <state width="937" height="351" key="GridCell.Tab.1.bottom" timestamp="1590635506710">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="937" height="351" key="GridCell.Tab.1.bottom/70.115.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590635506710" />
     <state width="1874" height="351" key="GridCell.Tab.1.bottom/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589256783349" />
-    <state width="1874" height="351" key="GridCell.Tab.1.center" timestamp="1589256783349">
+    <state width="937" height="351" key="GridCell.Tab.1.center" timestamp="1590635506710">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="937" height="351" key="GridCell.Tab.1.center/70.115.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590635506710" />
     <state width="1874" height="351" key="GridCell.Tab.1.center/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589256783349" />
-    <state width="1874" height="351" key="GridCell.Tab.1.left" timestamp="1589256783349">
+    <state width="937" height="351" key="GridCell.Tab.1.left" timestamp="1590635506710">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="937" height="351" key="GridCell.Tab.1.left/70.115.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590635506710" />
     <state width="1874" height="351" key="GridCell.Tab.1.left/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589256783349" />
-    <state width="1874" height="351" key="GridCell.Tab.1.right" timestamp="1589256783349">
+    <state width="937" height="351" key="GridCell.Tab.1.right" timestamp="1590635506710">
       <screen x="1920" y="0" width="1920" height="1080" />
     </state>
+    <state width="937" height="351" key="GridCell.Tab.1.right/70.115.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1590635506710" />
     <state width="1874" height="351" key="GridCell.Tab.1.right/70.27.1850.1053/1920.0.1920.1080@1920.0.1920.1080" timestamp="1589256783349" />
     <state x="528" y="299" width="924" height="691" key="Maven.ArtifactSearchDialog" timestamp="1589859322817">
       <screen x="70" y="115" width="1850" height="1053" />
@@ -230,9 +257,10 @@
       <screen x="70" y="115" width="1850" height="1053" />
     </state>
     <state x="170" y="115" width="1024" height="852" key="SettingsEditor/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1589862399736" />
-    <state x="590" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1590027099800">
-      <screen x="70" y="27" width="1850" height="1053" />
+    <state x="590" y="377" width="800" height="535" key="Vcs.Push.Dialog.v2" timestamp="1590548477927">
+      <screen x="70" y="115" width="1850" height="1053" />
     </state>
+    <state x="590" y="377" key="Vcs.Push.Dialog.v2/70.115.1850.1053/1920.0.1920.1080@70.115.1850.1053" timestamp="1590548477927" />
     <state x="590" y="289" width="800" height="535" key="Vcs.Push.Dialog.v2/70.27.1850.1053@70.27.1850.1053" timestamp="1590027099800" />
     <state x="170" y="215" width="1650" height="853" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1589863144438">
       <screen x="70" y="115" width="1850" height="1053" />

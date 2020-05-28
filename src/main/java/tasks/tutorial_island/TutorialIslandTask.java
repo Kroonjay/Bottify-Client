@@ -1,5 +1,6 @@
 package tasks.tutorial_island;
 
+import org.json.simple.JSONObject;
 import org.osbot.rs07.api.map.Area;
 import tasks.Task;
 import tasks.TaskName;
@@ -21,8 +22,8 @@ public final class TutorialIslandTask extends Task {
 
     public boolean success = false;
 
-    public TutorialIslandTask() {
-        super(TaskName.TUTORIAL_ISLAND);
+    public TutorialIslandTask(JSONObject taskJson) {
+        super(TaskName.TUTORIAL_ISLAND,taskJson);
     }
 
     @Override
@@ -73,6 +74,7 @@ public final class TutorialIslandTask extends Task {
             case 8:
             case 9:
                 miningSection.onLoop();
+
                 break;
             case 10:
             case 11:
@@ -93,7 +95,9 @@ public final class TutorialIslandTask extends Task {
                 wizardSection.onLoop();
                 break;
         }
-
+        if (getConfigs().get(281) == 1000 && myPlayer().isVisible()){
+            success=true;
+        }
     }
 
     private int getTutorialSection() {
@@ -102,6 +106,6 @@ public final class TutorialIslandTask extends Task {
 
     @Override
     public TutorialIslandTask copy() {
-        return new TutorialIslandTask();
+        return new TutorialIslandTask(this.taskJson);
     }
 }

@@ -53,6 +53,15 @@ public final class TaskExecutor extends Executable {
     }
 
     private void loadNextTask() throws InterruptedException {
+
+        if (currentTask!=null && currentTask.isComplete()) {
+            try {
+                ConfigManager.taskComplete();
+            } catch( IOException e){
+                log("Failed to notify server of task completion.");
+            }
+        }
+
         Task prevTask=currentTask;
         Task newTask;
         try {
@@ -65,7 +74,7 @@ public final class TaskExecutor extends Executable {
 
         if (currentTask==null){
             log("Received task: "+newTask.taskName);
-        } else if (newTask.taskName==currentTask.taskName && newTask.params==currentTask.params){
+        } else if (newTask.taskId==currentTask.taskId){
             log("No new tasks from server.");
             return;
         } else {

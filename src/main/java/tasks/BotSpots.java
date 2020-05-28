@@ -1,6 +1,9 @@
 package tasks;
 
+import org.osbot.Po;
+import org.osbot.rs07.api.map.Area;
 import org.osbot.rs07.api.map.Position;
+import utils.Location;
 
 public enum BotSpots {
 
@@ -193,7 +196,9 @@ public enum BotSpots {
     LOVAKENGJ_ASSEMBLY(new Position(1483, 3751, 0)),
     LOVAKITE_MINE(new Position(1426, 3833, 0)),
     LUMBER_YARD(new Position(3305, 3505, 0)),
+    LUMBRIDGE_CASTLE_BANK(new Position(3208, 3219,2)),
     LUMBRIDGE_SWAMP_CAVES(new Position(3169, 9571, 0)),
+    LUMBRIDGE_SWAMP_FISHING(new Position(3238, 3144,0)),
     LUMBRIDGE_SWAMP(new Position(3184, 3179, 0)),
     LUMBRIDGE(new Position(3224, 3218, 0)),
     LUNAR_ISLE(new Position(2130, 3873, 0)),

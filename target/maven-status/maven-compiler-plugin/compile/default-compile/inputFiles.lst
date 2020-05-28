@@ -51,6 +51,7 @@
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/banking/ToolUpgradeBanking.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/widget/CachedWidget.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/TutorialIsland.java
+/home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/fishing/Fishing.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/FightingSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/file_managers/ResourceManager.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/event/DisableAudioEvent.java
@@ -65,7 +66,6 @@
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/QuestSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/util/Sleep.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/tutorial_island/RuneScapeGuideSection.java
-/home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/fishing/FishingTask.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tasks/fishing/FishingLocation.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/tutorialisland/sections/TutorialSection.java
 /home/mitchell/OSBot/Bottify-Client/src/main/java/utils/Executable.java

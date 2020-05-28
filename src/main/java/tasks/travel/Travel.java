@@ -28,10 +28,9 @@ public class Travel extends Task {
         return false;
     }
 
-    public Travel(String params) {
+    public Travel(JSONObject taskJson) {
 
-        super(TaskName.TRAVEL);
-        this.params=params;
+        super(TaskName.TRAVEL,taskJson);
     }
 
     @Override
@@ -59,7 +58,7 @@ public class Travel extends Task {
 
     @Override
     public Travel copy () {
-        return new Travel(this.params);
+        return new Travel(this.taskJson);
     }
 
     public static int rand(int min, int max) {
