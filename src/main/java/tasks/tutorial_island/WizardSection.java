@@ -53,6 +53,12 @@ public final class WizardSection extends TutorialSection {
 
     @Override
     public final void onLoop() throws InterruptedException {
+
+        if (getNpcs().closest("Adventurer Jon")!=null && getNpcs().closest("Adventurer Jon").isVisible()){
+
+            return;
+        } else{
+        }
         if (pendingContinue()) {
             selectContinue();
             return;

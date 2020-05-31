@@ -2,6 +2,8 @@ package tasks.tutorial_island;
 
 import org.json.simple.JSONObject;
 import org.osbot.rs07.api.map.Area;
+import org.osbot.rs07.randoms.AutoLogin;
+import org.osbot.rs07.script.RandomSolver;
 import tasks.Task;
 import tasks.TaskName;
 import utils.Sleep;
@@ -18,24 +20,19 @@ public final class TutorialIslandTask extends Task {
     private final TutorialSection priestSection = new PriestSection();
     private final TutorialSection wizardSection = new WizardSection();
 
-    private Area lumbridge;
-
     public boolean success = false;
 
     public TutorialIslandTask(JSONObject taskJson) {
         super(TaskName.TUTORIAL_ISLAND,taskJson);
     }
-
     @Override
     public boolean isComplete() {
-        if (success) {
-            return true;
-        }
-        return false;
+        return (getNpcs().closest("Adventurer Jon")!=null && getNpcs().closest("Adventurer Jon").isVisible());
     }
 
     @Override
     public void onStart() throws InterruptedException {
+
         rsGuideSection.exchangeContext(getBot());
         survivalSection.exchangeContext(getBot());
         cookingSection.exchangeContext(getBot());
@@ -46,14 +43,13 @@ public final class TutorialIslandTask extends Task {
         priestSection.exchangeContext(getBot());
         wizardSection.exchangeContext(getBot());
 
-        lumbridge = new Area(3218,3210,3228,3226);
-
         Sleep.sleepUntil(() -> getClient().isLoggedIn() && myPlayer().isVisible() && myPlayer().isOnScreen(), 6000, 500);
     }
 
     @Override
     public void runTask() throws InterruptedException {
 
+        bot.lo
         switch (getTutorialSection()) {
             case 0:
             case 1:
@@ -95,10 +91,8 @@ public final class TutorialIslandTask extends Task {
                 wizardSection.onLoop();
                 break;
         }
-        if (getConfigs().get(281) == 1000 && myPlayer().isVisible()){
-            success=true;
-        }
     }
+
 
     private int getTutorialSection() {
         return getConfigs().get(406);

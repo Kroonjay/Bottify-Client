@@ -30,6 +30,7 @@ public class ConfigManager {
 
 
     public static String checkIn(String BotName) throws IOException {
+
         ConfigManager.BotName = BotName;
         URL url = new URL(BASE_URL + "check-in?BotName=" + ConfigManager.BotName);
         URLConnection con = url.openConnection();
@@ -52,8 +53,19 @@ public class ConfigManager {
     public static Task getTaskFromServer() throws IOException {
         Task task = null;
         JSONObject taskJson = null;
-        URL url = new URL(BASE_URL);
-        URLConnection con = url.openConnection();
+
+        ConfigManager.BotName = BotName;
+        URL url = new URL(BASE_URL + "check-in?BotName=" + ConfigManager.BotName);
+        HttpURLConnection con = (HttpURLConnection)url.openConnection();
+        con.setRequestMethod("GET");
+        con.connect();
+        int responseCode=con.getResponseCode();
+
+        if (responseCode==403){
+            System.out.println("Auth expired. Checking in again.");
+            checkIn(BotName);
+            return getTaskFromServer();
+        }
         String authHeaderString = "bearer " + token;
         con.setRequestProperty("Authorization", authHeaderString);
         InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
@@ -71,13 +83,25 @@ public class ConfigManager {
     }
 
 
-    public static void taskComplete() throws IOException {
+    public static String taskComplete() throws IOException {
 
-        URL url = new URL(BASE_URL + "/done");
+        ConfigManager.BotName = BotName;
+        URL url = new URL(BASE_URL + "done");
         URLConnection con = url.openConnection();
         String authHeaderString = "bearer " + token;
         con.setRequestProperty("Authorization", authHeaderString);
-
+        InputStreamReader inputStreamReader = new InputStreamReader(con.getInputStream());
+        BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+        JSONParser jsonParser = new JSONParser();
+        JSONObject response;
+        String result = null;
+        try {
+            response = (JSONObject) jsonParser.parse(bufferedReader);
+            result = (String) response.get("success");
+        } catch (ParseException e) {
+            result = ("error");
+        }
+        return result;
     }
 
 

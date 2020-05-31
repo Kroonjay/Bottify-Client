@@ -48,28 +48,7 @@ public class BottifyClient extends Script {
 
     }
 
-
-
-
     @Override
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     public int onLoop() throws InterruptedException {
         if (!getClient().isLoggedIn()) {
             return random(1200, 1800);
