@@ -54,7 +54,6 @@ public class MasterFarmers extends Task implements GameTickListener {
 
     public MasterFarmers(JSONObject taskJson) {
         super(TaskName.MASTER_FARMERS,taskJson);
-
     }
 
 

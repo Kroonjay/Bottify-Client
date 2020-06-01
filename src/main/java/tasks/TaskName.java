@@ -9,11 +9,10 @@ public enum TaskName {
     GRAND_EXCHANGE("GrandExchangeTask"),
     TUTORIAL_ISLAND("TutorialIslandTask"),
     BOT_ERROR("BotErrorTask"),
-    BREAK("BreakTask"),
     COOKS_ASSISTANT("QuestTask-CooksAssistant"),
     PICK_FLAX("MoneyMaking-FlaxCollecting"),
-    RUNE_MYSTERIES("QuestTask-RuneMysteries");
-
+    RUNE_MYSTERIES("QuestTask-RuneMysteries"),
+    WAIT("WaitTask");
     String taskName;
     public static TaskName getByName(String taskName) {
         return TaskName.valueOf(taskName);

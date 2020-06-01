@@ -49,7 +49,6 @@ public final class TutorialIslandTask extends Task {
     @Override
     public void runTask() throws InterruptedException {
 
-        bot.lo
         switch (getTutorialSection()) {
             case 0:
             case 1:

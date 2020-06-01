@@ -1,17 +1,20 @@
 import org.osbot.rs07.api.ui.Tab;
 import org.osbot.rs07.script.Script;
 import org.osbot.rs07.script.ScriptManifest;
+import org.osbot.rs07.utility.ConditionalSleep;
 import tasks.Task;
 import tasks.task_executor.TaskExecutor;
 import tasks.tutorial_island.TutorialIslandTask;
 import utils.bottify.ConfigManager;
 import utils.SkillTracker;
 import utils.event.EnableFixedModeEvent;
+import utils.event.LoginEvent;
 import utils.event.ToggleRoofsHiddenEvent;
 import utils.event.ToggleShiftDropEvent;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @ScriptManifest(author = "Kroonjay", name = "BottifyClient", info = "Bottify Client", version = 4.20, logo = "http://i.imgur.com/58Zz0fb.png")
 public class BottifyClient extends Script {
@@ -21,18 +24,27 @@ public class BottifyClient extends Script {
     private SkillTracker skillTracker;
     private TaskExecutor taskExecutor;
     private boolean osrsClientIsConfigured;
-
+    private LoginEvent loginEvent;
     @Override
+
+
+
+
     public void onStart() throws InterruptedException {
+
+
         String BotName = getParameters();
-        System.out.println("Attempting to Login to Bottify Server with BotID: " + BotName);
+        log("Attempting to Login to Bottify Server with BotID: " + BotName);
         try {
             String token = ConfigManager.checkIn(BotName);
+            log("Retrieved Token: " + token);
         } catch (IOException e) {
-            System.out.println("Couldn't Get Token");
+            log("Couldn't Get Token");
             e.printStackTrace();
         }
-
+        loginEvent = ConfigManager.getLoginEvent();
+        getBot().addLoginListener(loginEvent);
+        execute(loginEvent);
         try {
             taskExecutor = new TaskExecutor();
         } catch (IOException e) {
@@ -43,15 +55,28 @@ public class BottifyClient extends Script {
             skillTracker.stopAll();
         });
         taskExecutor.onStart();
-
         skillTracker = new SkillTracker(getSkills());
 
     }
 
     @Override
     public int onLoop() throws InterruptedException {
-        if (!getClient().isLoggedIn()) {
-            return random(1200, 1800);
+        if (loginEvent != null ) {
+            if (loginEvent.isQueued() || loginEvent.isWorking()) {
+                new ConditionalSleep(2000) {
+                    @Override
+                    public boolean condition() throws InterruptedException {
+                        return !loginEvent.isQueued() && loginEvent.isWorking();
+                    }
+                };
+            }
+            if (loginEvent.hasFailed()) {
+                LoginEvent.LoginEventResult result = loginEvent.getLoginEventResult();
+                log(result.toString());
+                stop(true);
+            }
+            getBot().removeLoginListener(loginEvent);
+            loginEvent = null;
         } else if (!osrsClientIsConfigured && osrsClientIsConfigurable()) {
             osrsClientIsConfigured = configureOSRSClient();
         } else if (taskExecutor.isComplete()) {
