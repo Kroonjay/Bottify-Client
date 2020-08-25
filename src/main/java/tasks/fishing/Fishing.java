@@ -3,15 +3,14 @@ package tasks.fishing;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-import org.osbot.rs07.api.Bank;
 import org.osbot.rs07.api.Inventory;
 import org.osbot.rs07.api.map.Position;
 import org.osbot.rs07.api.model.NPC;
 import org.osbot.rs07.api.model.RS2Object;
-import org.osbot.rs07.listener.GameTickListener;
 import tasks.BotSpots;
 import tasks.Task;
 import tasks.TaskName;
+import tasks.banking.Bank;
 import utils.Sleep;
 
 import java.util.Random;
@@ -19,7 +18,6 @@ import java.util.Random;
 public class Fishing extends Task {
 
     private Position fishingLocation;
-    private Position bankLocation;
     private int state;
     public boolean success=false;
     private int taskId;
@@ -33,7 +31,7 @@ public class Fishing extends Task {
 
 
     public Fishing(JSONObject taskJson) {
-        super(TaskName.FISHING,taskJson);
+        super(TaskName.FishingLumbridge,taskJson);
     }
 
 
@@ -42,17 +40,10 @@ public class Fishing extends Task {
     public void onStart() {
         state = States.GOTOSPOT;
         JSONParser parser = new JSONParser();
-        JSONObject params=null;
-        try {
-            params = (JSONObject) parser.parse(this.params);
-        } catch (ParseException e){
-            log("Failed to parse params");
-        }
-
+        JSONObject params=this.params;
         this.fishingLocation = BotSpots.getByName((String) params.get("fishingLocation"));
-        this.bankLocation = BotSpots.getByName((String) params.get("bankLocation"));
         log("Retrieved params");
-        log("fishingLocation: "+ params.get("fishingLocation"));
+        log("fishingLocation: "+ this.fishingLocation);
     }
 
     @Override
@@ -92,15 +83,23 @@ public class Fishing extends Task {
     }
 
     private int goToBank() throws InterruptedException {
-        if (getObjects().closest("Bank booth")==null || !getObjects().closest("Bank booth").isVisible()) {
-            getWalking().webWalk(bankLocation);
-            sleep(rand(780, 1098));
-            return States.GOTOBANK;
+        if (Bank.inAnyBank(myPosition())) {
+            if (!getBank().isOpen()) {
+                if (getBank().open()) {
+                    Sleep.sleepUntil(() -> getBank().isOpen(), 5000);
+                }
+            }
+            else {
+                getBank().depositAllExcept("Small fishing net");
+            }
         } else {
-            sleep(rand(270, 530));
-            return States.BANK;
+            log("FishingTask Initializing - Moving to Bank to Start Task");
+            getWalking().webWalk(Bank.getAreas());
+            Sleep.sleepUntil(() -> Bank.inAnyBank(myPosition()), 5000);
         }
+        return States.BANK;
     }
+
 
     private int fish() throws InterruptedException {
 
@@ -153,7 +152,7 @@ public class Fishing extends Task {
     }
 
 
-    static class States{
+    public static class States{
         public static final int GOTOSPOT = 0;
         public static final int FISH = 1;
         public static final int GOTOBANK = 2;

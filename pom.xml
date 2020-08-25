@@ -10,7 +10,7 @@
     <repositories>
         <repository>
             <id>local-repo</id>
-            <url>file://${project.basedir}/local-repo</url>
+            <url>file://C:\Users\scout\IdeaProjects\Bottify-Client\local-repo</url>
         </repository>
     </repositories>
     <dependencies>
@@ -56,6 +56,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
                 <configuration>
                     <source>8</source>
                     <target>8</target>

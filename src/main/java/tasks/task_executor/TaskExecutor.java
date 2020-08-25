@@ -40,12 +40,9 @@ public final class TaskExecutor extends Executable {
     @Override
     public final void run() throws InterruptedException {
         long now = System.currentTimeMillis();
-        if (now-lastCheckedAt>30000){
+        if (currentTask == null) {
             loadNextTask();
-            lastCheckedAt=now;
-        }
-        else if (currentTask == null) {
-            loadNextTask();
+            log("Successfully Loaded Next Task - Task ID: " + currentTask.taskId + " - Time - " + now);
             lastCheckedAt=now;
         } else {
             runTask(currentTask);
@@ -74,7 +71,7 @@ public final class TaskExecutor extends Executable {
             newTask = ConfigManager.getTaskFromServer();
         }
         catch(IOException e){
-            log("Could not retrieve task from server");
+            log("Could not retrieve task from server" + e.toString());
             sleep(2000);
             return;
         }

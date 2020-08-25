@@ -11,15 +11,15 @@ import tasks.tutorial_island.TutorialIslandTask;
 public class TaskFactory {
     public static Task createTask(final TaskName taskName, final JSONObject taskJson) {
         switch (taskName) {
-            case TUTORIAL_ISLAND:
+            case TutorialIsland:
                 return new TutorialIslandTask(taskJson);
             case TRAVEL:
                 return new Travel(taskJson);
             case COOKS_ASSISTANT:
                 return new CooksAssistantTask();
-            case MASTER_FARMERS:
+            case MasterFarmers:
                 return new MasterFarmers(taskJson);
-            case FISHING:
+            case FishingLumbridge:
                 return new Fishing(taskJson);
             default:
                 return null;

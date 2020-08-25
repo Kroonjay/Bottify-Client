@@ -23,11 +23,12 @@ public final class TutorialIslandTask extends Task {
     public boolean success = false;
 
     public TutorialIslandTask(JSONObject taskJson) {
-        super(TaskName.TUTORIAL_ISLAND,taskJson);
+        super(TaskName.TutorialIsland,taskJson);
     }
     @Override
     public boolean isComplete() {
-        return (getNpcs().closest("Adventurer Jon")!=null && getNpcs().closest("Adventurer Jon").isVisible());
+        log("TutorialIslandTask Execution Completed - Success: " + this.success);
+        return this.success;
     }
 
     @Override
@@ -48,53 +49,67 @@ public final class TutorialIslandTask extends Task {
 
     @Override
     public void runTask() throws InterruptedException {
-
+        log("Beginning RunTask Method for TutorialIslandTask - Tutorial Section: " + getTutorialSection());
         switch (getTutorialSection()) {
             case 0:
             case 1:
+                log("TutorialIsland Task Starting Section: Runescape Guide");
                 rsGuideSection.onLoop();
                 break;
             case 2:
             case 3:
+                log("TutorialIsland Task Starting Section: Survival");
                 survivalSection.onLoop();
                 break;
             case 4:
             case 5:
+                log("TutorialIsland Task Starting Section: Cooking");
                 cookingSection.onLoop();
                 break;
             case 6:
             case 7:
+                log("TutorialIsland Task Starting Section: Questing");
                 questSection.onLoop();
                 break;
             case 8:
             case 9:
+                log("TutorialIsland Task Starting Section: Mining");
                 miningSection.onLoop();
 
                 break;
             case 10:
             case 11:
             case 12:
+                log("TutorialIsland Task Starting Section: Combat");
                 fightingSection.onLoop();
                 break;
             case 14:
             case 15:
+                log("TutorialIsland Task Starting Section: Banking");
                 bankSection.onLoop();
                 break;
             case 16:
             case 17:
                 priestSection.onLoop();
+                log("TutorialIsland Task Starting Section: Prayer");
                 break;
             case 18:
             case 19:
             case 20:
+                log("TutorialIsland Task Starting Section: Magic");
                 wizardSection.onLoop();
                 break;
         }
+        log("RunTask Complete for TutorialIslandTask");
+        this.success = true;
     }
 
 
     private int getTutorialSection() {
         return getConfigs().get(406);
+    }
+    private boolean isTutorialIslandCompleted() {
+        return getConfigs().get(281) == 1000 && myPlayer().isVisible();
     }
 
     @Override

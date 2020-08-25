@@ -12,7 +12,8 @@ import utils.event.LoginEvent;
 import utils.event.ToggleRoofsHiddenEvent;
 import utils.event.ToggleShiftDropEvent;
 
-import java.io.IOException;
+import java.io.*;
+import java.nio.Buffer;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
@@ -20,7 +21,12 @@ import java.util.concurrent.TimeUnit;
 public class BottifyClient extends Script {
 
     static final String VERSION = "v3.1.10";
-    private static final String BASE_URL = "http://bottify.io/api/bots";
+    private static final String BASE_URL = "http://64.227.95.98/botapi";
+    private final String CONFIG_PATH = getDirectoryData() + File.separator + "BottifyClientConfig.txt";
+    private final File BottifyConfigFile = new File(CONFIG_PATH);
+    private String CheckInToken;
+    private String RunescapeUsername;
+    private String RunescapePassword;
     private SkillTracker skillTracker;
     private TaskExecutor taskExecutor;
     private boolean osrsClientIsConfigured;
@@ -31,16 +37,38 @@ public class BottifyClient extends Script {
 
 
     public void onStart() throws InterruptedException {
-
-
-        String BotName = getParameters();
-        log("Attempting to Login to Bottify Server with BotID: " + BotName);
+        log("BottifyClient Startup Initiated - Server Host: " + BASE_URL);
         try {
-            String token = ConfigManager.checkIn(BotName);
-            log("Retrieved Token: " + token);
+            BufferedReader configFileReader = new BufferedReader(new FileReader(BottifyConfigFile));
+            String line;
+            while ((line = configFileReader.readLine()) != null) {
+                if (line.contains("CheckInToken")) {
+                    this.CheckInToken = line.split(" - ")[1];
+                }
+                if (line.contains("RunescapeUsername")) {
+                    this.RunescapeUsername = line.split(" - ")[1];
+                }
+                if (line.contains("RunescapePassword")) {
+                    this.RunescapePassword = line.split(" - ")[1];
+                }
+            }
+            configFileReader.close();
+        } catch (FileNotFoundException e) {
+            log("BottifyClient Failed to Start - Config File Not Found - Msg: " + e.getMessage());
+            stop(true);
+            return;
         } catch (IOException e) {
-            log("Couldn't Get Token");
+            log("BottifyClient Failed to Start - Failed to Parse Config File - Msg: " + e.getMessage());
+            stop(true);
+            return;
+        }
+        try {
+            String token = ConfigManager.checkIn(this.CheckInToken, RunescapeUsername, RunescapePassword);
+            log("BottifyClient Successfully Retrieved Oauth Token: ");
+        } catch (IOException e) {
+            log("BottifyClient Failed to Start - Failed to Retrieve Oauth Token - Msg: " + e.getMessage());
             e.printStackTrace();
+            stop(true);
         }
         loginEvent = ConfigManager.getLoginEvent();
         getBot().addLoginListener(loginEvent);

@@ -4,7 +4,10 @@ import org.osbot.rs07.api.map.Area;
 import utils.Executable;
 import utils.Sleep;
 
-public abstract class Banking extends Executable {
+public abstract class
+
+
+Banking extends Executable {
 
     protected static final Area[] bankAreas = Bank.getAreas();
     public boolean succeeded;

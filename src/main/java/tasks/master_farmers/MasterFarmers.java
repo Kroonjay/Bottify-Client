@@ -28,7 +28,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Random;
 
-public class MasterFarmers extends Task implements GameTickListener {
+public class MasterFarmers extends Task  {
 
     private Position location;
     private String food;
@@ -53,7 +53,7 @@ public class MasterFarmers extends Task implements GameTickListener {
 
 
     public MasterFarmers(JSONObject taskJson) {
-        super(TaskName.MASTER_FARMERS,taskJson);
+        super(TaskName.MasterFarmers,taskJson);
     }
 
 
@@ -62,24 +62,20 @@ public class MasterFarmers extends Task implements GameTickListener {
     public void onStart() {
 
         JSONParser parser = new JSONParser();
-        JSONObject params=null;
-        try {
-            params = (JSONObject) parser.parse(this.params);
-        } catch (ParseException e){
-            log("Failed to parse params");
-        }
+        JSONObject params=this.params;
 
-        this.location= BotSpots.getByName((String) params.get("location"));
-        this.food=(String) params.get("food");
+        location= BotSpots.getByName((String) params.get("location"));
+        food=(String) params.get("food");
         log("Retrieved params");
-        log("Location: "+ params.get("location"));
-        log("Food: "+params.get("food"));
+        log("Location: "+ location);
+        log("Food: "+ food);
     }
 
     @Override
     public void runTask() throws InterruptedException {
-
+        log("MasterFarmersTask Initiated - Starting runTask Method");
         if (lastState != state){lastState=state;}
+        hp=getSkills().getDynamic(Skill.HITPOINTS);
         if (hp <= 4){ state=States.HEAL;}
 
         if (getInventory().isFull() && state != States.HEAL && state != States.BANK) {
@@ -89,33 +85,30 @@ public class MasterFarmers extends Task implements GameTickListener {
 
         switch (state){
             case States.GOTOFARMER:
-                state = goToFarmer();
+                log("MasterFarmersTask in Progress - Entered State - Go To Farmer");
+                goToFarmer();
                 break;
             case States.HEAL:
+                log("MasterFarmersTask in Progress - Entered State - Heal Player");
                 heal();
                 break;
             case States.PICKPOCKET:
+                log("MasterFarmersTask in Progress - Entered State - PickPocket Farmer");
                 pickpocket();
                 break;
             case States.BANK:
+                log("MasterFarmersTask in Progress - Entered State - Go To Bank");
                 bank();
                 break;
             default:
+                log("MasterFarmersTask in Progress - Entered State - Default");
                 break;
         }
+        log("MasterFarmersTask Complete - Exiting runTask Method");
 
 
     }
 
-
-
-    @Override
-    public void onGameTick(){
-
-        hp=getSkills().getDynamic(Skill.HITPOINTS);
-
-
-    }
 
     private int goToFarmer() throws InterruptedException {
         if (location!=(myPlayer()).getPosition()) {

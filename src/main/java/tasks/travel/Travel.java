@@ -37,12 +37,7 @@ public class Travel extends Task {
     public void onStart() {
 
         JSONParser parser = new JSONParser();
-        JSONObject params=null;
-        try {
-            params = (JSONObject) parser.parse(this.params);
-        } catch (ParseException e){
-            log("Failed to parse params");
-        }
+        JSONObject params=this.params;
 
         this.destination= BotSpots.getByName((String) params.get("destination"));
         log("Retrieved params");

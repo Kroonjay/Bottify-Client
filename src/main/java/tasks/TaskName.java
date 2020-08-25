@@ -2,12 +2,12 @@ package tasks;
 
 public enum TaskName {
 
-    MASTER_FARMERS("MasterFarmerTask"),
+    MasterFarmers("MasterFarmers"),
     TRAVEL("Travel"),
     RESOURCE("ResourceTask"),
-    FISHING("Fishing"),
+    FishingLumbridge("FishingLumbridge"),
     GRAND_EXCHANGE("GrandExchangeTask"),
-    TUTORIAL_ISLAND("TutorialIslandTask"),
+    TutorialIsland("TutorialIslandTask"),
     BOT_ERROR("BotErrorTask"),
     COOKS_ASSISTANT("QuestTask-CooksAssistant"),
     PICK_FLAX("MoneyMaking-FlaxCollecting"),

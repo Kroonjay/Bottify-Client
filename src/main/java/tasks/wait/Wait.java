@@ -35,12 +35,8 @@ public class Wait extends Task {
     @Override
     public void onStart() {
         JSONParser parser = new JSONParser();
-        JSONObject params = null;
-        try {
-            params = (JSONObject) parser.parse(this.params);
-        } catch (ParseException e) {
-            log("Failed to parse params");
-        }
+        JSONObject params = this.params;
+
         try {
             this.location = BotSpots.getByName((String) params.get("location"));
             long startTime = System.currentTimeMillis();
